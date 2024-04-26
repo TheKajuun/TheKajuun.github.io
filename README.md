@@ -1,3 +1,4 @@
 # TheKajuun.github.io
-<a href="TheKajuun.github.io"> here </a>
-GitHub hosted website - for fun
+not sure how to link to it in the readme, but it works.
+
+Simply a GitHub hosted website - for fun
