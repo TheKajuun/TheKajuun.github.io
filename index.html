@@ -47,23 +47,29 @@
     Check <a href="https://rewards.bing.com/pointsbreakdown">Points Breakdown</a> to see if working <br><br>
 
     Run auto-search: <button type="button" onclick="generateRandom()">Generate Random Search</button>
-   
+       
 <script>
-  async function openTabWithDelay(url, delay) {
+   document.addEventListener('DOMContentLoaded', (event) => {
+    async function openTabWithDelay(url, delay) {
+      await new Promise(resolve => setTimeout(resolve, delay));
+      window.open(url, '_blank');
+    }
+    
+    async function openTabWithDelay(url, delay) {
     await new Promise(resolve => setTimeout(resolve, delay));
     window.open(url, '_blank');
   }
   
   async function generateRandom() {
     for (var i = 0; i < 2; i++) {
+
       // Generate a unique timestamp for each search
       var Time_Stamp = new Date().getTime();
-
       // Vary the length of the search query
       var Query_Length = Math.floor(Math.random() * 5) + 5;
-
-      // Generate a random search query with letters and numbers
+      // Variable for the random search query with letters and numbers
       var Random_Query = "";
+
       for (var j = 0; j < Query_Length; j++) {
         var Random_Char = Math.random() < 0.5 ? String.fromCharCode(97 + Math.floor(Math.random() * 26)) : Math.floor(Math.random() * 10).toString();
         Random_Query += Random_Char;
@@ -76,9 +82,13 @@
       //broken? what did I break?
       var Search_URL = "https://www.bing.com/search?q=" + encodeURIComponent(Random_Query + Time_Stamp) + "&PC=U531&form=" + FORMNAME + "&" + Other_Vars;
 
+      console.log("Generated URL: " + Search_URL);
       openTabWithDelay(Search_URL, i*100);
+
     }
   }
+     document.querySelector('button').addEventListener('click', generateRandom);
+   });
 </script>
 
     
