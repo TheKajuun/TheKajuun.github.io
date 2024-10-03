@@ -43,6 +43,7 @@
     Note: Cannot seem to run all 3 accounts simultaneously, and using variables I seem to have to change daily in the code... tried doing a text box input for that, but easier to edit html manually, lol...<br>
     Run in Edge <i>(personal limitation - I am not logged in on Chrome because I do not mix my Microsoft and Google accounts).</i><br>
     I do not currently have the delay auto-search, only works once. Microsoft has put a massive delay that I don't have the patience to test<br>
+    As of October 2024, need to run one search, and then the variables now removed become session variables.
     Check <a href="https://rewards.bing.com/pointsbreakdown">Points Breakdown</a> to see if working <br><br>
 
     Run auto-search: <button type="button" onclick="generateRandom()">Generate Random Search</button>
@@ -73,7 +74,7 @@
       //var Other_Vars = "cvid=F977186C9D5A4FD6AC7C0A29914F5880";
       var Search_URL = "https://www.bing.com/search?q=" + encodeURIComponent(Random_Query + Time_Stamp) + "&PC=U531&form=" + FORMNAME + "&" + Other_Vars;
 
-      openTabWithDelay(Search_URL, i*100);
+      openTabWithDelay(Search_URL, i*1000);
     }
   }
 </script>
